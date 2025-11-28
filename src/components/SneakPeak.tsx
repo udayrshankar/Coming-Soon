@@ -1,3 +1,4 @@
+import React, { useState, useEffect, useRef } from "react";
 // Import Lucide icons based on your data's intended meaning
 import { FileText, KanbanSquare, Repeat, Plug } from "lucide-react";
 
@@ -8,7 +9,7 @@ const features = [
     title: "Fast, Accurate Response Drafting",
     description: "Lightning-fast, automated RFI & security questionnaire response drafting",
     gradient: "from-orange-400 via-yellow-400 to-orange-400",
-    shadow: "shadow-orange-500/50", 
+    shadow: "shadow-orange-500/50",
   },
   {
     icon: KanbanSquare,
@@ -33,36 +34,32 @@ const features = [
   },
 ];
 
-// --- Individual Card Component ---
+// --- Individual Card Component (Unchanged) ---
 
-const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React.ElementType; title: string; description: string; gradient: string; shadow: string }) => {
+const FeatureCard = ({
+  icon: Icon,
+  title,
+  description,
+  gradient,
+}: {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  gradient: string;
+  shadow: string;
+}) => {
   return (
     // 'aspect-square' enforces the square shape
     <div className="group relative w-full aspect-square">
-      
-      {/* 1. THE SHADOW (GLOW) LAYER 
-        - Uses absolute positioning behind the card.
-        - Has 'blur-xl' to make it look like a glow.
-        - 'opacity-0' by default, becomes visible ('opacity-100') on group-hover.
-      */}
+      {/* 1. THE SHADOW (GLOW) LAYER */}
       <div
         className={`absolute -inset-px rounded-xl bg-linear-to-r ${gradient} blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
       ></div>
 
-      {/* 2. THE BORDER LAYER 
-        - This creates the gradient border line.
-        - It is always visible (opacity-100).
-      */}
-      <div
-        className={`absolute inset-0 rounded-xl bg-linear-to-r ${gradient}`}
-      ></div>
+      {/* 2. THE BORDER LAYER (Preserved empty as per input) */}
 
-      {/* 3. THE CONTENT LAYER 
-        - Pure black background.
-        - 'm-[1px]' is used to inset this block slightly, revealing the gradient div behind it as a thin border.
-      */}
+      {/* 3. THE CONTENT LAYER */}
       <div className="relative flex h-full flex-col justify-between rounded-xl bg-black p-6 m-px">
-        
         {/* Icon at the Top Left */}
         <div>
           <Icon className="h-8 w-8 text-white" />
@@ -85,6 +82,43 @@ const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React
 // --- Main Feature Cards Grid Component ---
 
 const FeatureCards = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll listener for the mobile vertical carousel
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!containerRef.current) return;
+
+      const { top, height } = containerRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Only calculate if the container is overlapping with the viewport
+      if (top <= 0 && top > -height + windowHeight) {
+        // Calculate how far we've scrolled into the container (0 to 1)
+        const scrollDistance = -top;
+        const totalScrollableDistance = height - windowHeight;
+        
+        // Use a slightly smaller denominator to ensure we reach the last item
+        const progress = scrollDistance / totalScrollableDistance;
+        
+        // Map progress to the index of the features array
+        const newIndex = Math.min(
+          Math.max(Math.floor(progress * features.length), 0),
+          features.length - 1
+        );
+
+        setActiveIndex(newIndex);
+      } else if (top > 0) {
+        // Reset to first slide if we are above the container
+        setActiveIndex(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="p-12 flex flex-col justify-center">
       <h2
@@ -93,13 +127,45 @@ const FeatureCards = () => {
       >
         Sneak Peek
       </h2>
-      
-      {/* Grid updated to be responsive but keeping squares manageable */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+      {/* --- DESKTOP VIEW: ORIGINAL GRID (Hidden on mobile) --- */}
+      <div className="hidden lg:grid mx-auto max-w-7xl grid-cols-4 gap-8">
         {features.map((feature, index) => (
           <FeatureCard key={index} {...feature} />
         ))}
       </div>
+
+      {/* --- MOBILE VIEW: VERTICAL SCROLL CAROUSEL (Hidden on desktop) --- */}
+      {/* h-[300vh] creates a tall scrollable area. 
+         As you scroll down this 300vh, the content stays sticky in the center 
+         and the content changes based on scroll position.
+      */}
+      <div 
+        ref={containerRef} 
+        className="lg:hidden relative h-[300vh]"
+      >
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div className="w-full max-w-sm px-4">
+             {/* Key changes trigger a slight fade animation */}
+            <div key={activeIndex} className="animate-in fade-in zoom-in duration-300">
+              <FeatureCard {...features[activeIndex]} />
+            </div>
+            
+            {/* Optional: Simple Indicator to show user they can scroll */}
+            <div className="mt-8 flex justify-center gap-2">
+              {features.map((_, idx) => (
+                <div 
+                  key={idx}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    idx === activeIndex ? "w-8 bg-white" : "w-2 bg-gray-600"
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };
