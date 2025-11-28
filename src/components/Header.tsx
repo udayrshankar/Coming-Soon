@@ -16,8 +16,8 @@ export function Header() {
       >
 
 
-        <div className="text-white text-4xl font-bold tracking-tigh flex flex-row items-center gap-2">
-          <img src={pic} alt="" className='h-8 w-8 translate-y-0.5'/>
+        <div className="text-white text-2xl md:text-4xl font-bold tracking-tigh flex flex-row items-center gap-2">
+          <img src={pic} alt="" className='md:h-8 md:w-8 h-6 w-6 translate-y-0.5'/>
           Anseru.ai
         </div>
       </motion.div>
@@ -28,19 +28,19 @@ export function Header() {
         whileTap={{ scale: 0.95 }}
         transition={{ type: 'spring', stiffness: 300 }}
         className="
-          border-white border-2 text-white text-lg
-          px-6 py-2 rounded-full 
+          border-white border-2 text-white md:text-lg text-sm
+          px-3 py-2 rounded-full 
           flex items-center gap-3 
           transition-all duration-300 
           hover:shadow-lg hover:shadow-white/20
         "
       >
-        <span className="font-medium">Book a Call</span>
+        <span className="font-medium min-w-20">Book a Call</span>
 
         <motion.div
           whileHover={{ rotate: 15 }}
           className="
-            w-8 h-8 rounded-full translate-x-5
+            md:w-8 md:h-8 w-6 h-6 rounded-full translate-x-2
             flex items-center justify-center 
             border border-black/30 bg-white
           "
