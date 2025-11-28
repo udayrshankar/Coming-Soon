@@ -43,11 +43,11 @@ export function EmailSignup() {
               onBlur={() => setIsFocused(false)}
               placeholder="Enter Email"
               className="
-                w-full border-2 border-white/20
+                w-full border-2
                 rounded-full px-6 md:px-8 py-3 md:py-4
                 pr-16 md:pr-20
                 text-white placeholder:text-gray-400
-                focus:outline-none focus:border-purple-400
+                outline-none border-purple-400
                 transition-colors duration-300
               "
             />

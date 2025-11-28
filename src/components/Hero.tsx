@@ -31,9 +31,7 @@ export function Hero() {
         className="
           relative z-10
           -translate-y-20   /* mobile: higher */
-          sm:translate-y-10  /* small screens */
-          md:translate-y-20  /* tablets */
-          lg:translate-y-28  /* laptops/desktops (same as original look) */
+          lg:translate-y-5  /* laptops/desktops (same as original look) */
         "
       >
         <h1
@@ -69,7 +67,7 @@ export function Hero() {
           }}
           className="mt-12 md:mt-16"
         >
-          <ChevronDown className="w-8 h-8 mx-auto text-purple-300 translate-y-12" />
+          <ChevronDown className="rounded-full w-8 h-8 mx-auto text-purple-300 translate-y-12" />
         </motion.div>
       </motion.div>
 
