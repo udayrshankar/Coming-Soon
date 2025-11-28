@@ -7,31 +7,34 @@ import { ParallaxMotion } from "./Parallax";
 export function Hero() {
   return (
     <section className="max-w-full py-12 text-center">
-      
-   
 
       {/* COMING SOON Background Text */}
       <div className="absolute inset-0 bottom-0 flex items-center justify-center overflow-hidden pointer-events-none">
         <ParallaxMotion speed={-300}>
-        <motion.div
-          initial={{ opacity: 0,y : 100 }}
-          animate={{ opacity: 0.1, y: 0 }}
-          transition={{ duration: 2, delay: 1}}
-          className="text-[10rem] md:text-[20rem] lg:text-[35rem] tracking-tight select-none text-white translate-y-70 md:translate-y-45 "
-          style={{ lineHeight: 0.8, fontFamily: "'Six Caps', sans-serif" }}
-        >
-          COMING SOON
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 0.1, y: 0 }}
+            transition={{ duration: 2, delay: 1 }}
+            className="text-[10rem] md:text-[20rem] lg:text-[35rem] tracking-tight select-none text-white translate-y-70 md:translate-y-45"
+            style={{ lineHeight: 0.8, fontFamily: "'Six Caps', sans-serif" }}
+          >
+            COMING SOON
+          </motion.div>
         </ParallaxMotion>
       </div>
-      
 
       {/* Main Content */}
       <motion.div
         initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 120 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="relative z-10 "
+        className="
+          relative z-10
+          -translate-y-20   /* mobile: higher */
+          sm:translate-y-10  /* small screens */
+          md:translate-y-20  /* tablets */
+          lg:translate-y-28  /* laptops/desktops (same as original look) */
+        "
       >
         <h1
           className="text-4xl mb-4 md:mb-6"
@@ -70,7 +73,11 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <img src={gradient} className="w-full object-cover object-top absolute bottom-0 md:bottom-0 left-0 z-2" alt="" />
+      <img
+        src={gradient}
+        className="w-full object-cover object-top absolute bottom-0 md:bottom-0 left-0 z-2"
+        alt=""
+      />
     </section>
   );
 }

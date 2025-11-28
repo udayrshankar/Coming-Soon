@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Phone } from 'lucide-react';
-
+import pic from '../assets/Copy of Commercial Event Website in Black Turquoise Bold Gradient Style (5).png';
 
 export function Header() {
   return (
@@ -14,7 +14,10 @@ export function Header() {
         transition={{ type: 'spring', stiffness: 400 }}
         className="flex items-center"
       >
-        <div className="text-white text-4xl font-bold tracking-tight">
+
+
+        <div className="text-white text-4xl font-bold tracking-tigh flex flex-col">
+          <img src={pic} alt="" className='h-2 w-2'/>
           Anseru.ai
         </div>
       </motion.div>

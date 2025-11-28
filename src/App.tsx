@@ -5,7 +5,7 @@ import { SneakPeak } from "./components/SneakPeak";
 import { EmailSignup } from "./components/EmailSignup";
 import { FAQ } from "./components/FAQ";
 import { Header } from "./components/Header";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 >         <Header />
            <Hero />
     </section>
-    <section className="bg-linear-to-b from-black to bg-[#432378]">
+    <section className="bg-linear-to-b from-black to bg-[#432378] flex flex-col">
       <Accelerate />
       <SneakPeak />
       <EmailSignup />
