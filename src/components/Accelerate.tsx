@@ -29,7 +29,7 @@ export function Accelerate() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
             // Fix: mx-auto applied to center the block, backgrounds removed
-            className="text-gray-300 text-center text-sm md:text-base leading-[2.5] max-w-3xl mx-auto"
+            className="text-gray-300 text-center text-sm md:text-base leading-loose max-w-3xl mx-auto"
           >
             Our next-generation response automation platform is under development. Designed for teams who want to 
             accelerate response times, maximize win rates, and stay ahead of compliance. All in one intuitive platform. 

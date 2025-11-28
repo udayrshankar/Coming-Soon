@@ -1,7 +1,7 @@
 
 import { Hero } from "./components/Hero";
 import { Accelerate } from "./components/Accelerate";
-import { SneakPeak } from "./components/SneakPeak";
+import FeatureCards from "./components/SneakPeak";
 import { EmailSignup } from "./components/EmailSignup";
 import { FAQ } from "./components/FAQ";
 import { Header } from "./components/Header";
@@ -34,7 +34,7 @@ function App() {
     </section>
     <section className="bg-linear-to-b from-black to bg-[#432378] flex flex-col">
       <Accelerate />
-      <SneakPeak />
+      <FeatureCards />
       <EmailSignup />
       <FAQ />
     </section>
