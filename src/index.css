@@ -107,3 +107,38 @@ button {
   background-size: 300% 300%;
   animation: gradient-flow 4s ease infinite;
 }
+
+/* Dark Theme Button Styling */
+.dark-theme-btn {
+  background: rgba(255, 255, 255, 0.05); /* Slight transparency */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #00a2ff; /* Your accent color */
+  box-shadow: 0 0 15px rgba(0, 162, 255, 0.3); /* Glow effect */
+  transform: translateY(-2px);
+}
+
+/* Force Calendly popup above everything (including sticky headers) */
+.calendly-overlay {
+  z-index: 99999 !important;
+}
+
+.calendly-popup-content {
+  z-index: 100000 !important;
+}
+
+/* Optional: Fix for some versions of the widget not removing the scrollbar */
+.calendly-open {
+  overflow: hidden;
+}

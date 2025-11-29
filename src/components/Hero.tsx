@@ -35,11 +35,11 @@ export function Hero() {
         "
       >
         <h1
-          className="text-4xl mb-4 md:mb-6"
-          style={{ fontFamily: "'Urbanist', sans-serif", fontWeight: "700" }}
+          className="mb-4 md:mb-6"
+          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
-          <span className="block text-white lg:text-7xl">Revolutionizing</span>
-          <span className="block text-white lg:text-7xl">Response Automation</span>
+          <span className="block text-white text-4xl lg:text-7xl">Revolutionizing</span>
+          <span className="block text-white text-4xl lg:text-7xl">Response Automation</span>
         </h1>
 
         <motion.p

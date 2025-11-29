@@ -1,7 +1,5 @@
-// Import Lucide icons based on your data's intended meaning
 import { FileText, KanbanSquare, Repeat, Plug } from "lucide-react";
 
-// The data structure you provided
 const features = [
   {
     icon: FileText,
@@ -38,7 +36,7 @@ const features = [
 const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React.ElementType; title: string; description: string; gradient: string; shadow: string }) => {
   return (
     // 'aspect-square' enforces the square shape
-    <div className="group relative w-full aspect-square">
+    <div className="group relative md:w-full w-80 aspect-square">
       
       {/* 1. THE SHADOW (GLOW) LAYER 
         - Uses absolute positioning behind the card.
@@ -49,21 +47,11 @@ const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React
         className={`absolute -inset-px rounded-xl bg-linear-to-r ${gradient} blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
       ></div>
 
-      {/* 2. THE BORDER LAYER 
-        - This creates the gradient border line.
-        - It is always visible (opacity-100).
-      */}
-      
-
-      {/* 3. THE CONTENT LAYER 
-        - Pure black background.
-        - 'm-[1px]' is used to inset this block slightly, revealing the gradient div behind it as a thin border.
-      */}
-      <div className="relative flex h-full flex-col justify-between rounded-xl bg-black p-6 m-px">
+      <div className="relative flex h-full flex-col justify-between rounded-xl bg-[#0c0718] p-6 m-px">
         
         {/* Icon at the Top Left */}
-        <div>
-          <Icon className="h-8 w-8 text-white" />
+        <div className="w-full flex justify-center ">
+          <Icon className="h-20 w-20 text-white" />
         </div>
 
         {/* Text at the Bottom Left */}
@@ -71,7 +59,7 @@ const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React
           <h3 className="text-xl font-bold text-white leading-tight">
             {title}
           </h3>
-          <p className="text-sm text-gray-500 font-medium leading-relaxed">
+          <p className="text-lg text-gray-500 font-medium leading-relaxed">
             {description}
           </p>
         </div>
@@ -84,7 +72,7 @@ const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React
 
 const FeatureCards = () => {
   return (
-    <div className="p-12 flex flex-col justify-center">
+    <div className="p-5 flex flex-col justify-center">
       <h2
         className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-12 mx-auto max-w-full"
         style={{ fontFamily: "'Roboto', sans-serif" }}

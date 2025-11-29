@@ -29,7 +29,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(-1);
 
   return (
-    <section className="container mx-auto px-4 py-8 pb-24 md:pb-32 max-w-3xl">
+    <section className="container mx-auto px-4 py-5 max-w-3xl">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

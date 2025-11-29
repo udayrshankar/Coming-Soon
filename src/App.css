@@ -6,6 +6,11 @@
   max-width: none;
 }
 
+/* Ensures the Calendly Popup is always clickable, 
+   regardless of your Header's Z-Index */
+.calendly-overlay {
+  z-index: 2147483647 !important;
+}
 
 .logo {
   height: 6em;
