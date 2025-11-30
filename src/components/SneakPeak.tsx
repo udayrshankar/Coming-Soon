@@ -3,10 +3,11 @@ import { FileText, KanbanSquare, Repeat, Plug } from "lucide-react";
 const features = [
   {
     icon: FileText,
-    title: "Fast, Accurate Response Drafting",
-    description: "Lightning-fast, automated RFI & security questionnaire response drafting",
+    title: "Fast, Accurate Response",
+    description:
+      "Lightning-fast, automated RFI & security questionnaire response drafting",
     gradient: "from-orange-400 via-yellow-400 to-orange-400",
-    shadow: "shadow-orange-500/50", 
+    shadow: "shadow-orange-500/50",
   },
   {
     icon: KanbanSquare,
@@ -33,36 +34,46 @@ const features = [
 
 // --- Individual Card Component ---
 
-const FeatureCard = ({ icon: Icon, title, description, gradient }: { icon: React.ElementType; title: string; description: string; gradient: string; shadow: string }) => {
+const FeatureCard = ({
+  icon: Icon,
+  title,
+  description,
+  gradient,
+}: {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  gradient: string;
+  shadow: string;
+}) => {
   return (
     // 'aspect-square' enforces the square shape
-    <div className="group relative md:w-full w-80 aspect-square">
-      
-      {/* 1. THE SHADOW (GLOW) LAYER 
-        - Uses absolute positioning behind the card.
-        - Has 'blur-xl' to make it look like a glow.
-        - 'opacity-0' by default, becomes visible ('opacity-100') on group-hover.
-      */}
+    <div className="group relative md:w-full w-80 md:aspect-square">
+      {/* OUTER HOVER GLOW */}
       <div
-        className={`absolute -inset-px rounded-xl bg-linear-to-r ${gradient} blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
-      ></div>
+        className={`pointer-events-none absolute inset-0 rounded-xl bg-linear-to-r ${gradient}
+                blur-xl opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
+      />
 
-      <div className="relative flex h-full flex-col justify-between rounded-xl bg-[#0c0718] p-6 m-px">
-        
-        {/* Icon at the Top Left */}
-        <div className="w-full flex justify-center ">
-          <Icon className="h-20 w-20 text-white" />
+      {/* CARD */}
+      <div className="relative flex h-full flex-col rounded-xl bg-[#0c0718] p-6 shadow-[0_0_20px_rgba(255,255,255,0.25)]">
+        {/* Icon */}
+        <div className="w-full flex items-center h-20 mb-6">
+          <Icon className="h-20 w-20 text-white" strokeWidth={1} />
         </div>
 
-        {/* Text at the Bottom Left */}
-        <div className="flex flex-col gap-2">
-          <h3 className="text-xl font-bold text-white leading-tight">
-            {title}
-          </h3>
-          <p className="text-lg text-gray-500 font-medium leading-relaxed">
-            {description}
-          </p>
-        </div>
+        {/* Heading */}
+        <h3
+          className="text-xl font-bold text-white leading-tight translate-y-5 min-h-[3rem]"
+          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
+        >
+          {title}
+        </h3>
+
+        {/* Description */}
+        <p className="text-lg text-gray-500 font-medium leading-tight">
+          {description}
+        </p>
       </div>
     </div>
   );
@@ -75,11 +86,11 @@ const FeatureCards = () => {
     <div className="p-5 flex flex-col justify-center">
       <h2
         className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-12 mx-auto max-w-full"
-        style={{ fontFamily: "'Roboto', sans-serif" }}
+        style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
       >
         Sneak Peek
       </h2>
-      
+
       {/* Grid updated to be responsive but keeping squares manageable */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {features.map((feature, index) => (
