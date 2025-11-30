@@ -5,10 +5,13 @@ import { ChevronRight, CheckCircle2, XCircle } from "lucide-react";
 export function EmailSignup() {
   const [email, setEmail] = useState("");
   const [isFocused, setIsFocused] = useState(false);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   // Replace with your Google Script URL
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwQEbT9FYODJuX-NfbNWOTZB9ZyjXMY0VOpdyTe3YMs6GJJE8h5fUiE82_vT1poqSE5/exec";
+  const SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbwQEbT9FYODJuX-NfbNWOTZB9ZyjXMY0VOpdyTe3YMs6GJJE8h5fUiE82_vT1poqSE5/exec";
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,7 +53,7 @@ export function EmailSignup() {
       >
         <h2
           className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-6 mx-auto max-w-full"
-          style={{ fontFamily: "'Roboto', sans-serif" }}
+          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
           Be the first to know when we launch
         </h2>
@@ -61,10 +64,10 @@ export function EmailSignup() {
             animate={{
               boxShadow: isFocused
                 ? "0 0 35px rgba(147, 51, 234, 1)"
-                : "0 0 30px rgba(147, 51, 234, 0.4)",
+                : "0 0 30px rgba(147, 51, 234, 1)",
             }}
             transition={{ duration: 0.28 }}
-            className="relative rounded-full"
+            className="relative rounded-full mx-3"
           >
             <input
               type="email"
@@ -101,7 +104,11 @@ export function EmailSignup() {
               {status === "loading" ? (
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 0.8, ease: "linear" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 0.8,
+                    ease: "linear",
+                  }}
                   className="border-2 border-t-transparent border-purple-600 rounded-full w-5 h-5"
                 />
               ) : (
@@ -117,7 +124,7 @@ export function EmailSignup() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-gray-400 text-xs md:text-sm mt-4"
+          className="text-gray-400 italic text-xs md:text-sm mt-4"
         >
           Join our waitlist and get exclusive early access
         </motion.p>
