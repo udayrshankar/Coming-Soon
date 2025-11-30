@@ -7,7 +7,6 @@ import { ParallaxMotion } from "./Parallax";
 export function Hero() {
   return (
     <section className="max-w-full py-12 text-center">
-
       {/* COMING SOON Background Text */}
       <div className="absolute inset-0 bottom-0 flex items-center justify-center overflow-hidden pointer-events-none">
         <ParallaxMotion speed={-300}>
@@ -38,8 +37,12 @@ export function Hero() {
           className="mb-4 md:mb-6"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
-          <span className="block text-white text-4xl lg:text-7xl">Revolutionizing</span>
-          <span className="block text-white text-4xl lg:text-7xl">Response Automation</span>
+          <span className="block text-white text-4xl lg:text-7xl">
+            Revolutionizing
+          </span>
+          <span className="block text-white text-4xl lg:text-7xl">
+            Response Automation
+          </span>
         </h1>
 
         <motion.p
@@ -49,16 +52,14 @@ export function Hero() {
           className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto mb-8 md:mb-12 px-4"
         >
           Unlock the future with smart, secure, AI-powered response management
-          system
-          <br className="hidden md:block" />
-          Goodbye man hours. Hello automation.
+          system Goodbye man hours. Hello automation.
         </motion.p>
 
         <Countdown />
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          animate={{ opacity: 0.8 }}
           transition={{
             duration: 0.8,
             delay: 1.5,
@@ -67,7 +68,7 @@ export function Hero() {
           }}
           className="mt-12 md:mt-16"
         >
-          <ChevronDown className="rounded-full w-8 h-8 mx-auto text-purple-300 translate-y-12" />
+          <ChevronDown className="rounded-full bg-white/40 w-8 h-8 mx-auto text-purple-300 translate-y-5" />
         </motion.div>
       </motion.div>
 
