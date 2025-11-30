@@ -68,7 +68,7 @@ export function Hero() {
           }}
           className="mt-12 md:mt-16"
         >
-          <ChevronDown className="rounded-full bg-white/40 w-8 h-8 mx-auto text-purple-300 translate-y-5" />
+          <ChevronDown className="rounded-full bg-white/40 w-8 h-8 mx-auto text-purple-300 translate-y-12 md:translate-y-5" />
         </motion.div>
       </motion.div>
 
