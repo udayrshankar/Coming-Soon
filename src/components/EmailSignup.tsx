@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, CheckCircle2, XCircle } from "lucide-react";
 import emailjs from '@emailjs/browser';
+import posthog from 'posthog-js'; 
 
 export function EmailSignup() {
   // 1. FIX: useRef must be inside the component
@@ -39,7 +40,10 @@ export function EmailSignup() {
           form.current!, 
           { publicKey: '9_sq3d4xHRFAJr9vY' }
         );
-
+        posthog.capture('joined_waitlist', {
+        location: 'hero_section',
+        marketing_source: document.referrer // Tracks where they came from (Twitter, LinkedIn, etc.)
+      });
         // 3. FIX: Only set success here
         setStatus("success");
         setEmail("");
