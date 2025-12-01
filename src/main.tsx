@@ -4,7 +4,6 @@ import './index.css'
 import App from './App.tsx'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
 
 // 1. Import PostHog
 import posthog from 'posthog-js'
