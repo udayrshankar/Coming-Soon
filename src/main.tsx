@@ -9,7 +9,7 @@ import ReactDOM from 'react-dom/client'
 import posthog from 'posthog-js'
 
 // 2. Initialize it (Replace with your Key from PostHog dashboard)
-posthog.init('phc_uU45IWF2MvjZhx3f9CmHD847RAtqkErnq4MqUliigAY', {
+posthog.init('phc_Law2hQm6QlozpoQ9v9Nqqt1hYk708nzLks51FYqo4Ly', {
     api_host: 'https://us.i.posthog.com', // or 'https://eu.i.posthog.com'
     person_profiles: 'always', // Recommended for anonymous users
 })
