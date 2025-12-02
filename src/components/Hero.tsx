@@ -29,8 +29,7 @@ export function Hero() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="
           relative z-10
-          -translate-y-20   /* mobile: higher */
-          lg:translate-y-5  /* laptops/desktops (same as original look) */
+          translate-y-5  /* laptops/desktops (same as original look) */
         "
       >
         <h1
