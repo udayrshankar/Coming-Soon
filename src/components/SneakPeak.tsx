@@ -64,7 +64,7 @@ const FeatureCard = ({
 
         {/* Heading */}
         <h3
-          className="text-xl font-bold text-white leading-tight translate-y-5 min-h-[3rem]"
+          className="text-xl font-bold text-white leading-tight translate-y-5 min-h-12"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
         >
           {title}

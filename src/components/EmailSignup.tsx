@@ -1,11 +1,8 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, CheckCircle2, XCircle } from "lucide-react";
-import emailjs from '@emailjs/browser';
-import posthog from 'posthog-js'; 
+import { ChevronRight } from "lucide-react";
 
 export function EmailSignup() {
-  // 1. FIX: useRef must be inside the component
   const form = useRef<HTMLFormElement>(null);
   
   const [email, setEmail] = useState("");
@@ -21,35 +18,17 @@ export function EmailSignup() {
     setStatus("loading");
 
     try {
-      // Step 1: Send to Google Sheets
-      // Note: Ensure your Google Script returns JSON with correct CORS headers
       const res = await fetch(SCRIPT_URL, {
         method: "POST",
         body: JSON.stringify({ email }),
       });
 
-      // If needed, check res.ok here, though Google Scripts sometimes return 200 even on logical errors
       const result = await res.json();
 
       if (result.success) {
-        // Step 2: Send Email via EmailJS
-        // 2. FIX: We await this so we don't jump to error state prematurely
-        await emailjs.sendForm(
-          'service_eo8tlit', 
-          'template_7q10xqb', 
-          form.current!, 
-          { publicKey: '9_sq3d4xHRFAJr9vY' }
-        );
-        posthog.capture('joined_waitlist', {
-        location: 'hero_section',
-        marketing_source: document.referrer // Tracks where they came from (Twitter, LinkedIn, etc.)
-      });
-        // 3. FIX: Only set success here
         setStatus("success");
         setEmail("");
-        
       } else {
-        // Handle Google Script returning { success: false }
         throw new Error("Google Script failed");
       }
 
@@ -57,15 +36,11 @@ export function EmailSignup() {
       console.error("Submission failed:", err);
       setStatus("error");
     }
-
-    // Reset status to idle after 4 seconds (gives time to read the message)
-    setTimeout(() => {
-      setStatus("idle");
-    }, 4000);
   };
 
   return (
     <section className="container mx-auto px-4 py-10 md:py-10 max-w-5xl relative">
+      {/* --- INTRO & FORM SECTION --- */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -80,20 +55,19 @@ export function EmailSignup() {
           Be the first to know when we launch
         </h2>
 
-        {/* FORM */}
         <form onSubmit={handleSubmit} className="relative max-w-xl mx-auto" ref={form}>
           <motion.div
             animate={{
               boxShadow: isFocused
                 ? "0 0 35px rgba(147, 51, 234, 1)"
-                : "0 0 30px rgba(147, 51, 234, 0.6)", // Lower opacity when not focused
+                : "0 0 30px rgba(147, 51, 234, 0.6)",
             }}
             transition={{ duration: 0.28 }}
             className="relative rounded-full mx-3"
           >
             <input
               type="email"
-              name="email" // Required for EmailJS
+              name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               onFocus={() => setIsFocused(true)}
@@ -108,7 +82,6 @@ export function EmailSignup() {
                 outline-none border-purple-400
                 transition-colors duration-300
               "
-              // 4. FIX: Added bg-transparent so it doesn't default to white
             />
 
             <motion.button
@@ -154,30 +127,101 @@ export function EmailSignup() {
         </motion.p>
       </motion.div>
 
-      {/* POPUP FEEDBACK */}
+      {/* --- FULL SCREEN MODAL / POPUP --- */}
       <AnimatePresence>
-        {status === "success" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-6 right-6 backdrop-blur-xl bg-black/40 px-5 py-3 rounded-xl text-white flex items-center gap-2 shadow-2xl border border-green-500/50 z-50"
-          >
-            <CheckCircle2 className="w-5 h-5 text-green-400" />
-            <span className="font-medium">You're on the list!</span>
-          </motion.div>
-        )}
+        {(status === "success" || status === "error") && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+            
+            {/* 1. THE BACKDROP */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setStatus("idle")}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
 
-        {status === "error" && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-6 right-6 backdrop-blur-xl bg-black/40 px-5 py-3 rounded-xl text-white flex items-center gap-2 shadow-2xl border border-red-500/50 z-50"
-          >
-            <XCircle className="w-5 h-5 text-red-400" />
-            <span className="font-medium">Something went wrong.</span>
-          </motion.div>
+            {/* 2. THE SUCCESS CARD (Clean Version) */}
+            {status === "success" && (
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                transition={{ type: "spring", duration: 0.5 }}
+                className="relative w-full max-w-[380px] rounded-[20px] border border-white/20 backdrop-blur-xl bg-[#6e26a8]/20 overflow-hidden shadow-[0_0_40px_rgba(110,38,168,0.3)]"
+              >
+                {/* Purple Background Glow */}
+                <div className="absolute inset-0 -z-10 blur-3xl opacity-40 bg-[#6e26a8]" />
+
+                <div className="flex flex-col h-full p-6 text-left">
+                  {/* Top Bar: Status */}
+                  <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
+                    <motion.div
+                      animate={{ opacity: [1, 0.4, 1] }}
+                      transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                      className="w-3 h-3 rounded-full bg-[#00ff00] shadow-[0_0_10px_#00ff00]"
+                    />
+                    <span className="font-mono text-xs tracking-[0.2em] text-white/80">
+                      SPOT SECURED
+                    </span>
+                  </div>
+
+                  {/* Main Content */}
+                  <div className="mb-10 space-y-2">
+                    <h2 className="text-4xl font-bold text-white tracking-tight">All Set.</h2>
+                    <p className="text-white/70 text-sm leading-relaxed font-light">
+                      Your spot is saved. We’ll send you exclusive updates as we gear up for launch.
+                    </p>
+                  </div>
+
+                  {/* Footer: Serial Only */}
+                  <div className="mt-auto border-t border-white/10 pt-4">
+  
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* 3. THE ERROR CARD (Clean Version) */}
+            {status === "error" && (
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                transition={{ type: "spring", duration: 0.5 }}
+                className="relative w-full max-w-[380px] rounded-[20px] border border-white/20 backdrop-blur-xl bg-red-900/20 overflow-hidden shadow-[0_0_40px_rgba(239,68,68,0.3)]"
+              >
+                 {/* Red Background Glow */}
+                 <div className="absolute inset-0 -z-10 blur-3xl opacity-40 bg-red-600" />
+
+                <div className="flex flex-col h-full p-6 text-left">
+                  <div className="flex items-center gap-3 mb-8 border-b border-white/10 pb-4">
+                    <motion.div
+                      animate={{ opacity: [1, 0, 1] }}
+                      transition={{ repeat: Infinity, duration: 0.2 }}
+                      className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_10px_#ef4444]"
+                    />
+                    <span className="font-mono text-xs tracking-[0.2em] text-red-200/80">
+                      CONNECTION FAILED
+                    </span>
+                  </div>
+
+                  <div className="mb-10 space-y-2">
+                    <h2 className="text-4xl font-bold text-white tracking-tight">Access Denied.</h2>
+                    <p className="text-white/70 text-sm leading-relaxed font-light">
+                      We couldn't save your spot. Please check your internet connection and try again.
+                    </p>
+                  </div>
+
+                   <div className="mt-auto border-t border-white/10 pt-4 opacity-50">
+                    <div className="text-[10px] font-mono text-red-300/40 tracking-widest">
+                      ERR::404::FAIL
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </div>
         )}
       </AnimatePresence>
     </section>
