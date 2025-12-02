@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "What is this platform and who is it for?",
     answer:
-      "It's an upcoming response automation solution for sales, procurement, operations, legal, and compliance professionals who regularly respond to, or create, complex RFPs, RFIs & Security Questionnaires.",
+      "It’s an intelligent response automation solution built by Security and GRC professionals for sales, procurement, operations, legal, and compliance professionals who regularly respond to complex RFPs, RFIs, DDQs & Security Questionnaires.",
   },
   {
     question: "When will the platform officially launch?",
@@ -14,19 +14,19 @@ const faqs = [
       "We're finalizing the last details and will announce the launch date soon. Sign up to get notified as soon as it goes live!",
   },
   {
-    question: "How can I get early access or join the beta?",
+    question: "Can we run a pilot or get early access??",
     answer:
-      "Simply sign up with your email. Early registrants will receive invitations for beta testing, feature previews, and feedback opportunities.",
-  },
-  {
-    question: "Will there be special launch offers or pricing?",
-    answer:
-      "Yes! Early sign-ups will receive exclusive launch discounts and priority onboarding assistance.",
+      "Yes-simply sign up with your email and join the waitlist to request a private beta or pilot. Early adopters get priority onboarding, pilot discounts and feedback opportunities.",
   },
   {
     question: "How is my email and data handled during signup?",
     answer:
       "We will only use your contact details for launch and product updates. Your information is kept secure and private—no spam or sharing.",
+  },
+  {
+    question: "How can I get in touch for more info or to request an NDA?",
+    answer:
+      "Email kg.goutham@anseru.ai or click the ‘Book a Call’ button on top right of the page. We’ll respond to you as soon as we can.",
   },
 ];
 

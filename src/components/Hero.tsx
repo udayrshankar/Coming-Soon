@@ -29,7 +29,7 @@ export function Hero() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="
           relative z-10
-          translate-y-5  /* laptops/desktops (same as original look) */
+          translate-y-5  
         "
       >
         <h1
@@ -50,8 +50,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto mb-8 md:mb-12 px-4"
         >
-          Unlock the future with smart, secure, AI-powered response management
-          system Goodbye man hours. Hello automation.
+          Automate RFPs, RFIs and Vendor Security Assessment Questionnaires (VSAQs) with contextually accurate, auditable responses - built for security teams, procurement, and compliance
+
         </motion.p>
 
         <Countdown />

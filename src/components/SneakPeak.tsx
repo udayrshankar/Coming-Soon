@@ -5,7 +5,7 @@ const features = [
     icon: FileText,
     title: "Fast, Accurate Response",
     description:
-      "Lightning-fast, automated RFI & security questionnaire response drafting",
+      "Lightning-fast, accurate questionnaire response drafting",
     gradient: "from-orange-400 via-yellow-400 to-orange-400",
     shadow: "shadow-orange-500/50",
   },

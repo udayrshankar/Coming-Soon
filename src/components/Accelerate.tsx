@@ -19,7 +19,7 @@ export function Accelerate() {
           className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-6 mx-auto max-w-4xl"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
-          Accelerate, Win, and Stay Compliant
+          A True Adaptive AI Learning Engine
         </motion.h2>
 
         <motion.p
@@ -30,12 +30,12 @@ export function Accelerate() {
           // Fix: mx-auto applied to center the block, backgrounds removed
           className="text-gray-300 text-center md:text-center text-md md:text-lg leading-relaxed max-w-5xl mx-auto"
         >
-          Our next-generation response automation platform is designed for teams
-          who want to accelerate response times, maximize win rates, and stay
-          ahead of compliance. All in one intuitive platform. Whether you're in
-          sales, legal, or operations department, our adaptive AI, advanced
-          workflows, and enterprise-grade security will become your new
-          competitive edge to boost performance
+          <p>We’re building the next-generation response automation platform, 
+            our proprietary AI learns from your team’s feedback and real-time win/loss outcomes. 
+            Designed for teams who want to accelerate response times, maximize win rates, and stay ahead of compliance, 
+            all in one intuitive platform.</p>
+<p>Built by GRC and Security professionals – whether you're in sales, security, legal or compliance, our adaptive AI, advanced workflows, and enterprise-grade security will become your new competitive edge</p>
+
         </motion.p>
       </motion.div>
     </section>
