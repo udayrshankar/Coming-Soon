@@ -74,7 +74,7 @@ export function Hero() {
 
       <img
         src={gradient}
-        className="w-full object-cover object-top absolute bottom-0 md:bottom-0 left-0 z-2 md:translate-y-0 translate-y-6"
+      className="w-full object-cover object-top absolute bottom-0 md:bottom-0 left-0 z-2 md:translate-y-0 translate-y-6"
         alt=""
       />
     </section>

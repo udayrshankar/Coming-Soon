@@ -30,9 +30,9 @@ const Header = () => {
       >
 
 
-        <div className="text-white text-2xl md:text-4xl font-bold tracking-tigh flex flex-row items-center gap-2">
-          <img src={pic} alt="" className='md:h-8 md:w-8 h-6 w-6 translate-y-0.5'/>
-          Anseru
+        <div className="text-white text-2xl md:text-4xl font-bold tracking-tigh flex flex-row items-center gap-2 -translate-y-2">
+          <img src={pic} alt="" className='md:h-8 md:w-8 h-6 w-6 translate-y-2'/>
+          <span className='text-3xl translate-y-1.5 md:text-5xl md:translate-y-0'>anseru</span>
         </div>
       </motion.div>
 
@@ -73,7 +73,7 @@ const Header = () => {
         
       </motion.button>
       <PopupModal
-        url="https://calendly.com/udaymadavana40/30min"
+        url="https://calendly.com/kg-goutham-anseru/30min"
         onModalClose={() => setIsOpen(false)}
         open={isopen}
         rootElement={rootElement!}
