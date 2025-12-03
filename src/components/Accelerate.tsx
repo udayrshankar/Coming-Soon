@@ -28,7 +28,7 @@ export function Accelerate() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           // Fix: mx-auto applied to center the block, backgrounds removed
-          className="text-gray-300 text-center md:text-center text-md md:text-lg leading-relaxed max-w-5xl mx-auto space-y-4"
+          className="text-gray-300 text-center md:text-center text-md md:text-lg leading-relaxed max-w-7xl mx-auto space-y-4"
           style={{fontFamily: "monospace"}}>
           
           <p>We’re building the next-generation response automation platform, 
