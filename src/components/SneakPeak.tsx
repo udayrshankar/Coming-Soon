@@ -48,7 +48,7 @@ const FeatureCard = ({
 }) => {
   return (
     // 'aspect-square' enforces the square shape
-    <div className="group relative md:w-full w-80 md:aspect-square">
+    <div className="group relative md:w-full w-80">
       {/* OUTER HOVER GLOW */}
       <div
         className={`pointer-events-none absolute inset-0 rounded-xl bg-linear-to-r ${gradient}
@@ -64,15 +64,14 @@ const FeatureCard = ({
 
         {/* Heading */}
         <h3
-          className="text-xl font-bold text-white leading-tight translate-y-5 min-h-12"
+          className="text-xl font-bold text-white leading-tight translate-y-5 min-h-12 mb-1"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
         >
           {title}
         </h3>
 
         {/* Description */}
-        <p className="text-lg text-gray-500 font-medium leading-tight"
-        style={{fontFamily: "monospace"}}>
+        <p className="text-lg text-gray-500 font-medium leading-tight">
           {description}
         </p>
       </div>
@@ -84,7 +83,7 @@ const FeatureCard = ({
 
 const FeatureCards = () => {
   return (
-    <div className="p-5 flex flex-col justify-center">
+    <div className="pt-20 pb-15 flex flex-col justify-center">
       <h2
         className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-12 mx-auto max-w-full"
         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}

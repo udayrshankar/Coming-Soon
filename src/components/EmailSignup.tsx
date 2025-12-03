@@ -80,9 +80,8 @@ export function EmailSignup() {
                 pr-16 md:pr-20
                 text-white placeholder:text-gray-400
                 outline-none border-purple-400
-                transition-colors duration-300
+                transition-colors duration-300 italic
               "
-              style={{fontFamily: "monospace"}}
             />
 
             <motion.button
@@ -122,9 +121,9 @@ export function EmailSignup() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-gray-400 italic text-xs md:text-sm mt-4"
+          className="text-gray-400 italic text-xs md:text-[15px] mt-4"
         >
-          Join our waitlist and get exclusive early access
+          Sign up now to receive early access, updates, and exclusive offers!
         </motion.p>
       </motion.div>
 
