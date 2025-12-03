@@ -71,7 +71,8 @@ const FeatureCard = ({
         </h3>
 
         {/* Description */}
-        <p className="text-lg text-gray-500 font-medium leading-tight">
+        <p className="text-lg text-gray-500 font-medium leading-tight"
+        style={{fontFamily: "monospace"}}>
           {description}
         </p>
       </div>

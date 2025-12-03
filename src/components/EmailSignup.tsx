@@ -82,6 +82,7 @@ export function EmailSignup() {
                 outline-none border-purple-400
                 transition-colors duration-300
               "
+              style={{fontFamily: "monospace"}}
             />
 
             <motion.button

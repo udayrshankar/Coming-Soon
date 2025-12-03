@@ -49,6 +49,7 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-gray-300 text-sm md:text-base max-w-2xl mx-auto mb-8 md:mb-12 px-4"
+          style={{fontFamily: "monospace"}}
         >
           Automate RFPs, RFIs and Vendor Security Assessment Questionnaires (VSAQs) with contextually accurate, auditable responses - built for security teams, procurement, and compliance
 

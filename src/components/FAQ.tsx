@@ -114,6 +114,7 @@ export function FAQ() {
                         exit={{ y: -10 }}
                         transition={{ duration: 0.2 }}
                         className="px-6 md:px-8 py-5 md:pb-6 text-gray-300 text-sm md:text-base leading-relaxed"
+                        style={{fontFamily: "monospace"}}
                       >
                         {faq.answer}
                       </motion.div>
