@@ -19,7 +19,7 @@ export function Accelerate() {
           className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-6 mx-auto max-w-4xl"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
-          A True Adaptive AI Learning Engine
+          A True Adaptive AI Learning Engin
         </motion.h2>
 
         <motion.p
