@@ -57,8 +57,8 @@ export function Hero() {
         <Countdown />
 
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.8 }}
+          initial={{ opacity: 0 , y: 10 }}
+          animate={{ opacity: 0.8 , y: 0 }}
           transition={{
             duration: 0.8,
             delay: 1.5,

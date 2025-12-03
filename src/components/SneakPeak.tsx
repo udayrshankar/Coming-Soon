@@ -83,7 +83,7 @@ const FeatureCard = ({
 
 const FeatureCards = () => {
   return (
-    <div className="pt-20 pb-15 flex flex-col justify-center">
+    <div className="py-10 flex flex-col justify-center">
       <h2
         className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-12 mx-auto max-w-full"
         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}

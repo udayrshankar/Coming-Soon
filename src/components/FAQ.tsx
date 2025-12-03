@@ -113,7 +113,7 @@ export function FAQ() {
                         animate={{ y: 0 }}
                         exit={{ y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="px-6 md:px-8 py-5 md:pb-6 text-gray-300 text-sm md:text-base leading-relaxed"
+                        className="px-6 md:px-8 py-10 md:pb-6 text-gray-300 text-sm md:text-base leading-relaxed"
                       >
                         {faq.answer}
                       </motion.div>
