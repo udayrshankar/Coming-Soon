@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "What is this platform and who is it for?",
     answer:
-      "It’s an intelligent response automation solution built by Security and GRC professionals for sales, procurement, operations, legal, and compliance professionals who regularly respond to complex RFPs, RFIs, DDQs & Security Questionnaires.",
+      "It’s an intelligent response automation solution built by Security and GRC professionals for sales, operations, legal, security and compliance professionals who regularly respond to complex RFPs, RFIs & Vendor security questionnaires.",
   },
   {
     question: "When will the platform officially launch?",
@@ -14,7 +14,7 @@ const faqs = [
       "We're finalizing the last details and will announce the launch date soon. Sign up to get notified as soon as it goes live!",
   },
   {
-    question: "Can we run a pilot or get early access??",
+    question: "Can we run a pilot or get early access?",
     answer:
       "Yes-simply sign up with your email and join the waitlist to request a private beta or pilot. Early adopters get priority onboarding, pilot discounts and feedback opportunities.",
   },

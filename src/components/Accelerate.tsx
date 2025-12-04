@@ -31,8 +31,8 @@ export function Accelerate() {
           className="text-gray-300 text-center md:text-center text-md md:text-lg leading-relaxed max-w-7xl mx-auto space-y-4"
           style={{fontFamily: "monospace"}}>
           
-          <p>We’re building the next-generation response automation platform, 
-            our proprietary AI learns from your team’s feedback and real-time win/loss outcomes. 
+          <p>We’re building the next-generation response automation platform.
+            Our proprietary AI learns from your knowledge base, team’s feedback and real-time win/loss outcomes. 
             Designed for teams who want to accelerate response times, maximize win rates, and stay ahead of compliance, 
             all in one intuitive platform.</p>
 <p>Built by GRC and Security professionals – whether you're in sales, security, legal or compliance, our adaptive AI, advanced workflows, and enterprise-grade security will become your new competitive edge</p>

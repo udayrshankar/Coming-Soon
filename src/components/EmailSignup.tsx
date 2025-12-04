@@ -123,8 +123,7 @@ export function EmailSignup() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-gray-400 italic text-xs md:text-[15px] mt-4"
         >
-          Sign up now to receive early access, updates, and exclusive offers!
-        </motion.p>
+          Sign up now to receive early access, pilot discounts, and feature updates.        </motion.p>
       </motion.div>
 
       {/* --- FULL SCREEN MODAL / POPUP --- */}
