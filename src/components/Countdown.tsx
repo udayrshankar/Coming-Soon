@@ -138,7 +138,7 @@ export function Countdown() {
               </div>
             </div>
             {index < timeUnits.length - 1 && (
-              <div className="text-2xl md:text-4xl text-white/20 mx-1 md:mx-2 font-light">:</div>
+              <div className="text-2xl md:text-4xl text-white/20 mx-1 md:mx-2 font-light -translate-y-3">:</div>
             )}
           </div>
         ))}
