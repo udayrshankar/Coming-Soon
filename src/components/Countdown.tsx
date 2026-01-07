@@ -33,7 +33,7 @@ export function Countdown() {
   const [splashes, setSplashes] = useState<Splash[]>([]);
 
   useEffect(() => {
-    const targetDate = new Date('2026-01-16T00:00:00').getTime();
+    const targetDate = new Date('2026-01-24T00:00:00').getTime();
 
     const updateCountdown = () => {
       const now = new Date().getTime();

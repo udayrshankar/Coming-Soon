@@ -33,14 +33,11 @@ export function Hero() {
         "
       >
         <h1
-          className="mb-4 md:mb-6"
+          className="mb-4 md:mb-9"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
           <span className="block text-white text-4xl lg:text-7xl">
-            Revolutionizing
-          </span>
-          <span className="block text-white text-4xl lg:text-7xl">
-            Response Automation
+            AI Agents for RFPs and<br/>Security Questionnaires
           </span>
         </h1>
 
@@ -48,10 +45,9 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-gray-300 text-sm md:text-base max-w-3xl mx-auto mb-8 md:mb-12 px-4"
+          className="text-gray-300 text-sm md:text-[18px] max-w-5xl mx-auto mb-8 md:mb-12 px-4"
         >
-          Automate RFPs, RFIs and Vendor Security Assessment Questionnaires (VSAQs) with contextually accurate, auditable responses - built for security, sales, and compliance teams.
-
+<span >Agents autonomously</span><span> research your approved knowledge base, provide contextually accurate, auditable responses governed by human-in-the loop workflows with evidence traceability for security, sales, and compliance teams.</span>
         </motion.p>
 
         <Countdown />

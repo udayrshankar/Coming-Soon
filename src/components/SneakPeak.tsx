@@ -3,30 +3,30 @@ import { FileText, KanbanSquare, Repeat, Plug } from "lucide-react";
 const features = [
   {
     icon: FileText,
-    title: "Fast, Accurate Response",
+    title: "Gen AI for Drafting Responses",
     description:
-      "Lightning-fast, accurate questionnaire response drafting",
+      "Lightning-fast, accurate questionnaire response drafting responses.",
     gradient: "from-orange-400 via-yellow-400 to-orange-400",
     shadow: "shadow-orange-500/50",
   },
   {
     icon: KanbanSquare,
-    title: "Unified Tasks",
-    description: "Seamless team collaboration and task management",
+    title: "Agent-Led Triage",
+    description: "AI Agents route questions intake, nudge experts, and obtain human-in-the loop approvals before submission.",
     gradient: "from-purple-400 via-pink-500 to-purple-400",
     shadow: "shadow-pink-500/50",
   },
   {
     icon: Repeat,
-    title: "Limitless",
-    description: "Unlimited user availability and no hidden fees",
+    title: "Infinite Scale",
+    description: "Expand Q&A capacity with agents that never tire, ensuring consistent voice at enterprise speed.",
     gradient: "from-blue-400 via-cyan-400 to-blue-400",
     shadow: "shadow-cyan-500/50",
   },
   {
     icon: Plug,
-    title: "Integration",
-    description: "Integration with your favorite business tools",
+    title: "Connected Knowledge",
+    description: "Our AI integrates to every knowledge source, including your favorite business tools to maintain a living source of truth.",
     gradient: "from-green-400 via-teal-400 to-green-400",
     shadow: "shadow-teal-500/50",
   },
@@ -64,7 +64,7 @@ const FeatureCard = ({
 
         {/* Heading */}
         <h3
-          className="text-xl font-bold text-white leading-tight translate-y-5 min-h-12 mb-1"
+          className="text-xl font-bold text-white leading-tight  min-h-12 mb-2"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500 }}
         >
           {title}

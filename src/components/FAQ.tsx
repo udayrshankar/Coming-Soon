@@ -4,19 +4,15 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is this platform and who is it for?",
+    question: "What is Anseru and who is it for?",
     answer:
-      "It’s an intelligent response automation solution built by Security and GRC professionals for sales, operations, legal, security and compliance professionals who regularly respond to complex RFPs, RFIs & Vendor security questionnaires.",
+      "Anseru is an AI agentic platform orchestrating an intelligent agent workflow that automates research, builds justified answers, enforces compliance rules, collaborates with your team, and delivers auditable RFP responses. Our AI completes RFXs and Vendor Security Assessment Questionnaires using responses grounded only in your knowledge base. Agents draft review-ready artifacts, highlight key risks, and collaborate with security, sales, compliance, legal, operations, and product teams that handle vendor questionnaires every day.",
   },
+
   {
-    question: "When will the platform officially launch?",
+    question: "Can we join an early pilot program?",
     answer:
-      "We're finalizing the last details and will announce the launch date soon. Sign up to get notified as soon as it goes live!",
-  },
-  {
-    question: "Can we run a pilot or get early access?",
-    answer:
-      "Yes-simply sign up with your email and join the waitlist to request a private beta or pilot. Early adopters get priority onboarding, pilot discounts and feedback opportunities.",
+      "Yes. During pilot onboarding, our platform connects to your designated knowledge sources and drafts responses to your RFx and VSAQs. Early adopters participate in controlled pilots, receive implementation support, and enjoy pilot discounts.",
   },
   {
     question: "How is my email and data handled during signup?",
@@ -24,9 +20,9 @@ const faqs = [
       "We will only use your contact details for launch and product updates. Your information is kept secure and private—no spam or sharing.",
   },
   {
-    question: "How can I get in touch for more info or to request an NDA?",
+    question: "How can I get in touch or request an NDA?",
     answer:
-      "Email kg.goutham@anseru.ai or click the ‘Book a Call’ button on top right of the page. We’ll respond to you as soon as we can.",
+      "Our team will guide you on activating the right agents and formal associations, including NDAs and security reviews. Email kg.goutham@anseru.ai or click Book a Call to discuss how drafting agents can be mapped to your sales, security, compliance, and business workflows.",
   },
 ];
 
