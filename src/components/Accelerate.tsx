@@ -28,7 +28,7 @@ export function Accelerate() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
           // Fix: mx-auto applied to center the block, backgrounds removed
-          className="text-gray-300 text-center md:text-center text-md md:text-lg leading-relaxed max-w-6xl mx-auto space-y-4"
+          className="text-gray-300 text-center md:text-center text-md md:text-[16px] leading-relaxed max-w-6xl mx-auto space-y-4"
           style={{fontFamily: "monospace"}}>
           
           We're building next-generation AI Agents that define how enterprise teams respond to RFPs and Security Questionnaires.
