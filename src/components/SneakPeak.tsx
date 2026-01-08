@@ -5,7 +5,7 @@ const features = [
     icon: FileText,
     title: "Gen AI for Drafting Responses",
     description:
-      "Lightning-fast, accurate questionnaire response drafting responses.",
+      "Gen AI generates accurate draft responsesfrom approved knowledge and past submissions.",
     gradient: "from-orange-400 via-yellow-400 to-orange-400",
     shadow: "shadow-orange-500/50",
   },
@@ -26,7 +26,7 @@ const features = [
   {
     icon: Plug,
     title: "Connected Knowledge",
-    description: "Our AI integrates to every knowledge source, including your favorite business tools to maintain a living source of truth.",
+    description: "Our AI integrates to every knowledge source and business tools to maintain a living source of truth.",
     gradient: "from-green-400 via-teal-400 to-green-400",
     shadow: "shadow-teal-500/50",
   },

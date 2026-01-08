@@ -14,11 +14,7 @@ const faqs = [
     answer:
       "Yes. During pilot onboarding, our platform connects to your designated knowledge sources and drafts responses to your RFx and VSAQs. Early adopters participate in controlled pilots, receive implementation support, and enjoy pilot discounts.",
   },
-  {
-    question: "How is my email and data handled during signup?",
-    answer:
-      "We will only use your contact details for launch and product updates. Your information is kept secure and private—no spam or sharing.",
-  },
+
   {
     question: "How can I get in touch or request an NDA?",
     answer:
