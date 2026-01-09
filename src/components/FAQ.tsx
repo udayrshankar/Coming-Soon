@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import { useEffect } from "react";
 import { PopupModal } from 'react-calendly';
-import { useState as useState2 } from 'react';
 
 const faqs = [
   {
