@@ -16,11 +16,22 @@ export function Accelerate() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           // Fix: Added max-w-3xl to limit width and allow mx-auto to center it
-          className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-6 mx-auto max-w-4xl"
+          className="text-3xl md:text-4xl font-bold lg:text-5xl text-white text-center mb-2 mx-auto max-w-4xl"
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
           Meet Your AI Workforce
         </motion.h2>
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          // Fix: Added max-w-3xl to limit width and allow mx-auto to center it
+          className="text-[#ababab] text-center md:text-center text-md md:text-[16px] leading-relaxed max-w-6xl mx-auto space-y-4 mb-6"
+          style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
+        >
+          Powered by AI Agents built for autonomous triage, response drafting and collaboration
+        </motion.p>
 
         <motion.p
           initial={{ opacity: 0 }}
@@ -31,10 +42,10 @@ export function Accelerate() {
           className="text-gray-300 text-center md:text-center text-md md:text-[16px] leading-relaxed max-w-6xl mx-auto space-y-4"
           style={{fontFamily: "monospace"}}>
           
-          We're building next-generation AI Agents that define how enterprise teams respond to RFPs and Security Questionnaires.
-The agents autonomously work from your approved knowledge base and past submissions to draft RFP and VSAQ responses, flag response gaps, and route items to the right owners for human-in-the loop approval.<br/><br/>
-Every response strengthens company memory, ensuring evidence-backed, traceable, and consistent submissions delivered with AI precision at business speed while reducing expert dependency.<br/><br/>
-        Built by Security, Sales & Compliance Experts - whether you're in sales, security, legal or compliance, our adaptive AI Agents, advanced workflows, and enterprise-grade security will become your new competitive edge. 
+          We're building next-generation AI Agents that define how enterprise teams respond to RFx’s and Security Questionnaires. <br/><br/>
+The agents autonomously work from your approved knowledge base and past submissions to draft RFx and VSAQ responses, flag response gaps, and route items to the right owners for human-in-the loop approval.<br/><br/>
+Every response strengthens company memory, ensuring evidence-backed, traceable, and consistent submissions delivered with AI precision at business speed while reducing expert dependency.
+
 
 
         </motion.p>

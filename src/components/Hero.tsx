@@ -37,7 +37,7 @@ export function Hero() {
           style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: "500" }}
         >
           <span className="block text-white text-4xl lg:text-7xl">
-            AI Agents for RFPs and<br/>Security Questionnaires
+            AI Agents for RFXs and<br/>Security Questionnaires
           </span>
         </h1>
 
